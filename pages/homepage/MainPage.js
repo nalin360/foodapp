@@ -20,10 +20,10 @@ function MainPage() {
 
   return (
 
-    <CartProvider>
+    
 
-      <NavigationContainer>
-        
+      <NavigationContainer independent={true}>
+        <CartProvider>
         <Stack.Navigator>
           <Stack.Screen name='Products' component={ProductsList}
             options={({ navigation }) => ({
@@ -49,9 +49,9 @@ function MainPage() {
 
             })} />
 
-        </Stack.Navigator>
+        </Stack.Navigator></CartProvider>
       </NavigationContainer>
-    </CartProvider>
+    
 
   );
 

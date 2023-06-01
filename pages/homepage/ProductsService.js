@@ -5,7 +5,7 @@ const PRODUCTS = [
         name: 'ReactProX Headset',
         price: 350,
         // image: require('../assets/products/headset-100.jpg'),
-        // image: require(),
+        image: require('../../assets/images/noddles.jpeg'),
         description: 'A headset combines a headphone with microphone. Headsets are made with either a single-earpiece (mono) or a double-earpiece (mono to both ears or stereo).'
 
     },

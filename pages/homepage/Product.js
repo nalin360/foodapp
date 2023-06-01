@@ -1,10 +1,18 @@
 import React from 'react';
 import { Text, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
 
+
+
+const imageMapping = {
+  
+  // Add more image mappings as needed
+};
 function Product({ name, price, image, onPress }) {
+  console.log(image)
+  
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>
-      <Image style={styles.thumb} source={{"uri" : image}} />
+      <Image style={styles.thumb} source={image} />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.price}>₹{price}</Text>
