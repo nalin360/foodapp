@@ -5,11 +5,8 @@ import { getProduct } from './ProductsService.js';
 export const CartContext = createContext();
 
 function CartProvider(props) {
-
   const [items, setItems] = useState([]);
-
   function addItemToCart(id) {
-
     const product = getProduct(id);
 
     setItems((prevItems) => {
@@ -19,13 +16,9 @@ function CartProvider(props) {
       if(!item) {
 
           return [...prevItems, {
-
               id,
-
               qty: 1,
-
               product,
-
               totalPrice: product.price 
 
           }];
@@ -35,15 +28,10 @@ function CartProvider(props) {
       else { 
 
           return prevItems.map((item) => {
-
             if(item.id == id) {
-
               item.qty++;
-
               item.totalPrice += product.price;
-
             }
-
             return item;
 
           });
@@ -55,29 +43,20 @@ function CartProvider(props) {
 }
 
 function getItemsCount() {
-
       return items.reduce((sum, item) => (sum + item.qty), 0);
-
   }
-
   function getTotalPrice() {
-
       return items.reduce((sum, item) => (sum + item.totalPrice), 0);
-
   }  
 
   return (
-
     <CartContext.Provider 
-
       value={{items, setItems, getItemsCount, addItemToCart, getTotalPrice}}>
-
       {props.children}
-
     </CartContext.Provider>
 
   );
 
 }
 
-export default CartContext;
+export default CartProvider;
