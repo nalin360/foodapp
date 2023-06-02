@@ -18,82 +18,82 @@ const LandingPage = ({ navigation }) => {
       alert('Error: Please enter a valid username and password');
       return;
     }
-
+    navigation.navigate('MainPage');
     // Send login request to server
-    fetch('http://localhost:5000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Check login response from server
-        if (data.success) {
-          console.log('Login successful');
-          // Redirect to the home page upon successful login
-          // Replace 'MainPage' with the actual route name of your home page
-          navigation.navigate('MainPage');
-        } else {
-          console.log('Login failed:', data.error);
-          alert('Login failed. Please check your credentials.');
-        }
-      })
-      .catch((error) => {
-        console.log('Login error:', error);
-        alert('An error occurred while logging in. Please try again.');
-      });
-  };
+  //   fetch('http://localhost:5000/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       username,
+  //       password,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // Check login response from server
+  //       if (data.success) {
+  //         console.log('Login successful');
+  //         // Redirect to the home page upon successful login
+  //         // Replace 'MainPage' with the actual route name of your home page
+  //         navigation.navigate('MainPage');
+  //       } else {
+  //         console.log('Login failed:', data.error);
+  //         alert('Login failed. Please check your credentials.');
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log('Login error:', error);
+  //       alert('An error occurred while logging in. Please try again.');
+  //     });
+  // };
 
-  const handleSignup = () => {
-    if (
-      username.trim() === '' ||
-      password.trim() === '' ||
-      firstName.trim() === '' ||
-      lastName.trim() === '' ||
-      phoneNumber.trim() === '' ||
-      email.trim() === ''
-    ) {
-      alert('Error: Please fill in all the fields');
-      return;
-    }
+  // const handleSignup = () => {
+  //   if (
+  //     username.trim() === '' ||
+  //     password.trim() === '' ||
+  //     firstName.trim() === '' ||
+  //     lastName.trim() === '' ||
+  //     phoneNumber.trim() === '' ||
+  //     email.trim() === ''
+  //   ) {
+  //     alert('Error: Please fill in all the fields');
+  //     return;
+  //   }
 
-    // Send signup request to server
-    fetch('http://localhost:5000/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username,
-        password,
-        firstName,
-        lastName,
-        phoneNumber,
-        email,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        // Check signup response from server
-        if (data.success) {
-          console.log('Account created successfully');
-          // Redirect to the home page upon successful account creation
-          // Replace 'MainPage' with the actual route name of your home page
-          navigation.navigate('MainPage');
-        } else {
-          console.log('Account creation failed:', data.error);
-          alert('Account creation failed. Please try again.');
-        }
-      })
-      .catch((error) => {
-        console.log('Account creation error:', error);
-        alert('An error occurred while creating the account. Please try again.');
-      });
+  //   // Send signup request to server
+  //   fetch('http://localhost:5000/signup', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       username,
+  //       password,
+  //       firstName,
+  //       lastName,
+  //       phoneNumber,
+  //       email,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       // Check signup response from server
+  //       if (data.success) {
+  //         console.log('Account created successfully');
+  //         // Redirect to the home page upon successful account creation
+  //         // Replace 'MainPage' with the actual route name of your home page
+  //         navigation.navigate('MainPage');
+  //       } else {
+  //         console.log('Account creation failed:', data.error);
+  //         alert('Account creation failed. Please try again.');
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.log('Account creation error:', error);
+  //       alert('An error occurred while creating the account. Please try again.');
+  //     });
   };
 
   return (
