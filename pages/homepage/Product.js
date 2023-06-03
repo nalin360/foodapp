@@ -1,18 +1,22 @@
 import React from 'react';
 import { Text, Image, View, StyleSheet, TouchableOpacity } from 'react-native';
 
-
+// const products = [
+//   { name: 'Shahi panir', image: require('../../assets/images/chicken AM.jpeg') },
+//   { name: 'chiken biryani', image: require('../../assets/images/chicken biryani .jpeg') },
+//   // Add more products as needed
+//  ];
 
 const imageMapping = {
   
   // Add more image mappings as needed
 };
 function Product({ name, price, image, onPress }) {
-  console.log(image)
+  // console.log(image)
   
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>
-      <Image style={styles.thumb} source={image} />
+      <Image style={styles.thumb} source={{uri : image}} />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.price}>₹{price}</Text>
