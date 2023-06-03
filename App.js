@@ -4,7 +4,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import LandingPage from './pages/loginRegister/loginsignup';
 import MainPage from './pages/homepage/MainPage';
+import SidePanal from './pages/sidepanal/SidePanal';
+import SearchableList from './components/Search';
+// import PaymentWindow from './pages/paymentsbox/payment';
+// import Payment from './pages/paymentsbox/card';
 
+// ----------------------------
+
+// import CartMerge from './components/cart_merge';
+// ----------------------------
+
+// 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -20,6 +30,33 @@ const App = () => {
           name="MainPage"
           component={MainPage}
           // options={{ headerShown: false }}
+        />
+       
+        {/* <Stack.Screen
+          name="PaymentWindow"
+          component={PaymentWindow}
+          // options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Payment"
+          component={Payment}
+          // options={{ headerShown: false }}
+        /> */}
+        
+        {/* <Stack.Screen
+          name="CartMerge"
+          component={CartMerge}
+          // options={{ headerShown: false }}
+        /> */}
+        <Stack.Screen
+          name="SidePanal"
+          component={SidePanal}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="SearchableList"
+          component={SearchableList}
+          options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
